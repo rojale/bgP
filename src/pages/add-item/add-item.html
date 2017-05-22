@@ -1,0 +1,26 @@
+
+<ion-header>
+<ion-toolbar color = "secondary">
+
+    <ion-title>Search by Name</ion-title>
+  <ion-buttons end>
+  	<button ion-button icon-only (click)="close()"><ion-icon name="close"></ion-icon></button>
+  </ion-buttons>
+ </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+<ion-list>
+	<ion-item>
+		<ion-label floating>Name</ion-label>
+		<ion-input id="gameName" type="text" [(ngModel)]="gameName"></ion-input>
+	</ion-item>
+  <button ion-button (click)="nameSearch()">Search</button>
+
+  <ion-item *ngFor = "let game of games; let i = index" (click) = "addGame(i)">{{game.name}} {{game.year}} {{game.minPlayers}} - {{game.maxPlayers}}</ion-item>
+
+</ion-list>
+
+</ion-content>
