@@ -19,7 +19,7 @@
 	</ion-item>
   <button ion-button (click)="nameSearch()">Search</button>
 
-  <ion-item *ngFor = "let game of games; let i = index" (click) = "addGame(i)">{{game.name}} {{game.year}} {{game.minPlayers}} - {{game.maxPlayers}}</ion-item>
+  <ion-item *ngFor = "let game of games; let i = index" (click) = "addGame(i)"> <img src="{{game.thumbnail}}"/> {{game.name}} {{game.year}} {{game.minPlayers}} - {{game.maxPlayers}}</ion-item>
 
 </ion-list>
 

@@ -30,6 +30,7 @@ export class AddItemPage {
   
 
   nameSearch(){
+    this.games = [];
     var gName = this.gameName;
     var searchurl = 'http://192.168.2.50/JS/bggcall.php?gname=' + gName;
     this.bgRequest(searchurl);
@@ -47,7 +48,7 @@ export class AddItemPage {
       var bgInfo = JSON.parse(this.httpRequest.response);
 
       for (let i in bgInfo) {
-        this.saveGame({name: bgInfo[i][0], year: bgInfo[i][1], minPlayers: bgInfo[i][2], maxPlayers: bgInfo[i][3]});
+        this.saveGame({name: bgInfo[i][0], year: bgInfo[i][1], minPlayers: bgInfo[i][2], maxPlayers: bgInfo[i][3], thumbnail: bgInfo[i][4]});
       }
 
 
